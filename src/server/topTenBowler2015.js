@@ -15,7 +15,7 @@ function topTenBowler2015(matches,deliveries){
             acc[cv["bowler"]] = { runs : 0 , balls : 0 };
         }
 
-        acc[cv["bowler"]].runs += parseInt(cv["total_runs"]);
+        acc[cv["bowler"]].runs += parseInt(cv["batsman_runs"]) + parseInt(cv["noball_runs"]) + parseInt(cv["wide_runs"]);
 
         if(parseInt(cv["wide_runs"]) > 0 || parseInt(cv["noball_runs"]) > 0){
             return acc;
